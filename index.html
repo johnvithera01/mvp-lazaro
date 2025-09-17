@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Lazaro - Sistema de Gestão de Clínicas</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/agenda.css">
+    <link rel="stylesheet" href="styles/patients.css">
+    <link rel="stylesheet" href="styles/pep.css">
+    <link rel="stylesheet" href="styles/telemedicine.css">
+    <link rel="stylesheet" href="styles/financial.css">
+    <link rel="stylesheet" href="styles/insurance.css">
+    <link rel="stylesheet" href="styles/stock.css">
+    <link rel="stylesheet" href="styles/patient-portal.css">
+    <link rel="stylesheet" href="styles/ai-features.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <i class="fas fa-hospital"></i>
+                <span>MVP Lazaro</span>
+            </div>
+        </div>
+        
+        <div class="header-center">
+            <div class="global-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar paciente, CPF ou telefone..." id="globalSearch">
+            </div>
+        </div>
+        
+        <div class="header-right">
+            <button class="notification-btn" id="notificationBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </button>
+            <div class="user-menu">
+                <div class="user-avatar">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Dr. João Silva</span>
+                    <span class="user-role">Médico</span>
+                </div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <nav class="sidebar-nav">
+            <div class="nav-section">
+                <h3>Principal</h3>
+                <ul>
+                    <li class="nav-item active" data-page="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item" data-page="agenda">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Agenda</span>
+                    </li>
+                    <li class="nav-item" data-page="patients">
+                        <i class="fas fa-users"></i>
+                        <span>Pacientes</span>
+                    </li>
+                    <li class="nav-item" data-page="pep">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Prontuário</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Atendimento</h3>
+                <ul>
+                    <li class="nav-item" data-page="telemedicine">
+                        <i class="fas fa-video"></i>
+                        <span>Telemedicina</span>
+                    </li>
+                    <li class="nav-item" data-page="financial">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Financeiro</span>
+                    </li>
+                    <li class="nav-item" data-page="insurance">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Convênios</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-section">
+                <h3>Gestão</h3>
+                <ul>
+                    <li class="nav-item" data-page="stock">
+                        <i class="fas fa-boxes"></i>
+                        <span>Estoque</span>
+                    </li>
+                    <li class="nav-item" data-page="ai-features">
+                        <i class="fas fa-robot"></i>
+                        <span>IA Assistente</span>
+                    </li>
+                    <li class="nav-item" data-page="settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Configurações</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Dashboard Page -->
+        <div class="page" id="dashboard-page">
+            <div class="page-header">
+                <h1>Dashboard</h1>
+                <div class="page-actions">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        Nova Consulta
+                    </button>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Quick Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>12</h3>
+                            <p>Consultas Hoje</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>3</h3>
+                            <p>Em Espera</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>5</h3>
+                            <p>Teleconsultas</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>R$ 2.450</h3>
+                            <p>Receita Hoje</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Schedule -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Agenda de Hoje</h2>
+                        <div class="view-toggle">
+                            <button class="btn-toggle active" data-view="list">Lista</button>
+                            <button class="btn-toggle" data-view="timeline">Timeline</button>
+                        </div>
+                    </div>
+                    <div class="schedule-list" id="todaySchedule">
+                        <!-- Schedule items will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Recent Patients -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Pacientes Recentes</h2>
+                        <a href="#" class="btn-link">Ver todos</a>
+                    </div>
+                    <div class="patients-list" id="recentPatients">
+                        <!-- Recent patients will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Insights de IA</h2>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="ai-insights">
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Risco de No-Show Alto</h4>
+                                <p>3 pacientes com probabilidade >70% de faltar</p>
+                                <button class="btn btn-sm btn-outline">Ver detalhes</button>
+                            </div>
+                        </div>
+                        <div class="insight-card">
+                            <div class="insight-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="insight-content">
+                                <h4>Consultas Atrasadas</h4>
+                                <p>2 consultas com atraso >15min</p>
+                                <button class="btn btn-sm btn-outline">Reorganizar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other pages will be loaded dynamically -->
+        <div class="page" id="agenda-page" style="display: none;">
+            <!-- Agenda content will be loaded here -->
+        </div>
+        
+        <div class="page" id="patients-page" style="display: none;">
+            <!-- Patients content will be loaded here -->
+        </div>
+        
+        <div class="page" id="pep-page" style="display: none;">
+            <!-- PEP content will be loaded here -->
+        </div>
+        
+        <div class="page" id="telemedicine-page" style="display: none;">
+            <!-- Telemedicine content will be loaded here -->
+        </div>
+        
+        <div class="page" id="financial-page" style="display: none;">
+            <!-- Financial content will be loaded here -->
+        </div>
+        
+        <div class="page" id="insurance-page" style="display: none;">
+            <!-- Insurance content will be loaded here -->
+        </div>
+        
+        <div class="page" id="stock-page" style="display: none;">
+            <!-- Stock content will be loaded here -->
+        </div>
+        
+        <div class="page" id="ai-features-page" style="display: none;">
+            <!-- AI Features content will be loaded here -->
+        </div>
+        
+        <div class="page" id="patient-portal-page" style="display: none;">
+            <!-- Patient Portal content will be loaded here -->
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="notificationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Notificações</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="notification-list">
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-calendar-exclamation"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>Consulta confirmada</h4>
+                            <p>Maria Silva confirmou a consulta para 14:30</p>
+                            <span class="notification-time">5 min atrás</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-user-times"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>No-show detectado</h4>
+                            <p>João Santos não compareceu à consulta</p>
+                            <span class="notification-time">15 min atrás</span>
+                        </div>
+                    </div>
+                    <div class="notification-item">
+                        <div class="notification-icon">
+                            <i class="fas fa-file-medical"></i>
+                        </div>
+                        <div class="notification-content">
+                            <h4>Receita assinada</h4>
+                            <p>Receita digital enviada para Ana Costa</p>
+                            <span class="notification-time">1 hora atrás</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/agenda.js"></script>
+    <script src="js/patients.js"></script>
+    <script src="js/pep.js"></script>
+    <script src="js/telemedicine.js"></script>
+    <script src="js/financial.js"></script>
+    <script src="js/insurance.js"></script>
+    <script src="js/stock.js"></script>
+    <script src="js/ai-features.js"></script>
+    <script src="js/patient-portal.js"></script>
+</body>
+</html>

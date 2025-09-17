@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Lazaro - Tela de Pacientes Melhorada</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/patients.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .demo-header {
+            background: var(--primary-color);
+            color: white;
+            padding: var(--spacing-md);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .demo-content {
+            padding: 0 var(--spacing-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .improvements-list {
+            background: var(--gray-50);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .improvements-list h3 {
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .improvements-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .improvements-list li {
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .improvements-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .improvements-list li i {
+            color: var(--success-color);
+            font-size: var(--font-size-sm);
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-header">
+        <h1>🏥 MVP Lazaro - Tela de Pacientes Melhorada</h1>
+        <p>Demonstração das melhorias implementadas para resolver o problema de dados truncados</p>
+    </div>
+    
+    <div class="demo-content">
+        <div class="improvements-list">
+            <h3>✅ Melhorias Implementadas</h3>
+            <ul>
+                <li><i class="fas fa-check"></i> <strong>Larguras de coluna otimizadas:</strong> Cada coluna tem largura mínima definida para evitar truncamento</li>
+                <li><i class="fas fa-check"></i> <strong>Tooltips informativos:</strong> Hover sobre dados truncados mostra informações completas</li>
+                <li><i class="fas fa-check"></i> <strong>Quebra de texto inteligente:</strong> Textos longos quebram adequadamente sem quebrar o layout</li>
+                <li><i class="fas fa-check"></i> <strong>Responsividade melhorada:</strong> Tabela se adapta a diferentes tamanhos de tela</li>
+                <li><i class="fas fa-check"></i> <strong>Indicadores visuais:</strong> Mostra quando há mais dados disponíveis</li>
+                <li><i class="fas fa-check"></i> <strong>Scroll horizontal:</strong> Permite visualizar todas as colunas em telas menores</li>
+            </ul>
+        </div>
+        
+        <!-- Tela de Pacientes Melhorada -->
+        <div class="patients-container">
+            <div class="patients-header">
+                <div class="patients-title">
+                    <h2>Pacientes</h2>
+                    <span class="patients-count">1.247 pacientes cadastrados</span>
+                </div>
+                <div class="patients-actions">
+                    <button class="btn btn-primary" onclick="showPatientForm()">
+                        <i class="fas fa-plus"></i>
+                        Novo Paciente
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        Exportar
+                    </button>
+                </div>
+            </div>
+            
+            <div class="patients-toolbar">
+                <div class="patients-search">
+                    <div class="search-input">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Buscar por nome, CPF ou telefone..." value="">
+                    </div>
+                </div>
+                <div class="patients-filters">
+                    <div class="filter-group">
+                        <label class="filter-label">Status:</label>
+                        <select class="filter-select">
+                            <option value="">Todos</option>
+                            <option value="active">Ativo</option>
+                            <option value="inactive">Inativo</option>
+                            <option value="pending">Pendente</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Convênio:</label>
+                        <select class="filter-select">
+                            <option value="">Todos</option>
+                            <option value="unimed">Unimed</option>
+                            <option value="amil">Amil</option>
+                            <option value="bradesco">Bradesco</option>
+                            <option value="particular">Particular</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Última visita:</label>
+                        <select class="filter-select">
+                            <option value="">Todos</option>
+                            <option value="7">Últimos 7 dias</option>
+                            <option value="30">Últimos 30 dias</option>
+                            <option value="90">Últimos 90 dias</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="patients-content">
+                <table class="patients-table">
+                    <thead>
+                        <tr>
+                            <th>Paciente</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>Última Visita</th>
+                            <th>Próxima Consulta</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="patient-row" data-patient-id="1">
+                            <td>
+                                <div class="patient-row">
+                                    <div class="patient-avatar">JS</div>
+                                    <div class="patient-info">
+                                        <div class="patient-name" title="João Silva Santos">João Silva Santos</div>
+                                        <div class="patient-details">
+                                            <div class="patient-detail">
+                                                <i class="fas fa-birthday-cake"></i>
+                                                <span>45 anos</span>
+                                            </div>
+                                            <div class="patient-detail">
+                                                <i class="fas fa-shield-alt"></i>
+                                                <span title="Unimed São Paulo - Plano Empresarial">Unimed São Paulo - Plano Empresarial</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="patient-field-value phone" title="123.456.789-00">123.456.789-00</span>
+                            </td>
+                            <td>
+                                <span class="patient-field-value phone" title="(11) 99999-9999">(11) 99999-9999</span>
+                            </td>
+                            <td>
+                                <span title="15/01/2024">15/01/2024</span>
+                            </td>
+                            <td>
+                                <span title="22/01/2024">22/01/2024</span>
+                            </td>
+                            <td>
+                                <div class="patient-status">
+                                    <span class="status-indicator active" title="Paciente ativo">Ativo</span>
+                                    <i class="fas fa-exclamation-triangle text-warning" title="Paciente com alertas"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="patient-actions">
+                                    <button class="patient-action" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="patient-action" title="Nova consulta">
+                                        <i class="fas fa-calendar-plus"></i>
+                                    </button>
+                                    <button class="patient-action" title="Histórico">
+                                        <i class="fas fa-history"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr class="patient-row" data-patient-id="2">
+                            <td>
+                                <div class="patient-row">
+                                    <div class="patient-avatar">MS</div>
+                                    <div class="patient-info">
+                                        <div class="patient-name" title="Maria Santos Oliveira da Silva">Maria Santos Oliveira da Silva</div>
+                                        <div class="patient-details">
+                                            <div class="patient-detail">
+                                                <i class="fas fa-birthday-cake"></i>
+                                                <span>38 anos</span>
+                                            </div>
+                                            <div class="patient-detail">
+                                                <i class="fas fa-shield-alt"></i>
+                                                <span title="Amil One Health - Plano Premium">Amil One Health - Plano Premium</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="patient-field-value phone" title="987.654.321-00">987.654.321-00</span>
+                            </td>
+                            <td>
+                                <span class="patient-field-value phone" title="(11) 88888-8888">(11) 88888-8888</span>
+                            </td>
+                            <td>
+                                <span title="10/01/2024">10/01/2024</span>
+                            </td>
+                            <td>
+                                <span title="Sem agendamento">-</span>
+                            </td>
+                            <td>
+                                <div class="patient-status">
+                                    <span class="status-indicator active" title="Paciente ativo">Ativo</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="patient-actions">
+                                    <button class="patient-action" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="patient-action" title="Nova consulta">
+                                        <i class="fas fa-calendar-plus"></i>
+                                    </button>
+                                    <button class="patient-action" title="Histórico">
+                                        <i class="fas fa-history"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        
+                        <tr class="patient-row" data-patient-id="3">
+                            <td>
+                                <div class="patient-row">
+                                    <div class="patient-avatar">PC</div>
+                                    <div class="patient-info">
+                                        <div class="patient-name" title="Pedro Costa Ferreira">Pedro Costa Ferreira</div>
+                                        <div class="patient-details">
+                                            <div class="patient-detail">
+                                                <i class="fas fa-birthday-cake"></i>
+                                                <span>52 anos</span>
+                                            </div>
+                                            <div class="patient-detail">
+                                                <i class="fas fa-shield-alt"></i>
+                                                <span title="Bradesco Saúde - Plano Empresarial Plus">Bradesco Saúde - Plano Empresarial Plus</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="patient-field-value phone" title="456.789.123-00">456.789.123-00</span>
+                            </td>
+                            <td>
+                                <span class="patient-field-value phone" title="(11) 77777-7777">(11) 77777-7777</span>
+                            </td>
+                            <td>
+                                <span title="05/01/2024">05/01/2024</span>
+                            </td>
+                            <td>
+                                <span title="25/01/2024">25/01/2024</span>
+                            </td>
+                            <td>
+                                <div class="patient-status">
+                                    <span class="status-indicator pending" title="Paciente pendente">Pendente</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="patient-actions">
+                                    <button class="patient-action" title="Editar">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="patient-action" title="Nova consulta">
+                                        <i class="fas fa-calendar-plus"></i>
+                                    </button>
+                                    <button class="patient-action" title="Histórico">
+                                        <i class="fas fa-history"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Simular funcionalidade básica
+        function showPatientForm() {
+            alert('Funcionalidade de novo paciente seria aberta aqui');
+        }
+        
+        // Adicionar interatividade aos tooltips
+        document.addEventListener('DOMContentLoaded', function() {
+            const rows = document.querySelectorAll('.patient-row');
+            rows.forEach(row => {
+                row.addEventListener('click', function() {
+                    rows.forEach(r => r.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

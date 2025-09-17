@@ -1,0 +1,874 @@
+/* Additional Components Styles */
+
+/* AI Features Styles */
+.ai-features-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    height: calc(100vh - var(--header-height) - var(--spacing-xl) * 2);
+}
+
+.ai-feature-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.ai-feature-card:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.ai-feature-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    color: white;
+}
+
+.ai-feature-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.ai-feature-description {
+    font-size: var(--font-size-sm);
+    opacity: 0.9;
+}
+
+.ai-feature-body {
+    padding: var(--spacing-lg);
+}
+
+.ai-feature-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.ai-stat {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--gray-50);
+    border-radius: var(--border-radius);
+}
+
+.ai-stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.ai-stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+}
+
+.ai-feature-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.ai-action {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    text-decoration: none;
+    color: inherit;
+}
+
+.ai-action:hover {
+    background: var(--gray-50);
+    border-color: var(--primary-color);
+}
+
+.ai-action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+}
+
+.ai-action-content {
+    flex: 1;
+}
+
+.ai-action-title {
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-xs);
+}
+
+.ai-action-description {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+}
+
+/* Telemedicine Styles */
+.telemedicine-container {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: var(--spacing-xl);
+    height: calc(100vh - var(--header-height) - var(--spacing-xl) * 2);
+}
+
+.telemedicine-main {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.telemedicine-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.telemedicine-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.telemedicine-title h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.telemedicine-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--success-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.telemedicine-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.telemedicine-video {
+    flex: 1;
+    background: var(--gray-900);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.telemedicine-video-placeholder {
+    text-align: center;
+    color: var(--gray-400);
+}
+
+.telemedicine-video-placeholder i {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.telemedicine-controls {
+    padding: var(--spacing-lg);
+    border-top: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-md);
+}
+
+.telemedicine-control {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    transition: var(--transition-fast);
+}
+
+.telemedicine-control.mute {
+    background: var(--gray-300);
+    color: var(--gray-600);
+}
+
+.telemedicine-control.mute.active {
+    background: var(--danger-color);
+    color: white;
+}
+
+.telemedicine-control.video {
+    background: var(--gray-300);
+    color: var(--gray-600);
+}
+
+.telemedicine-control.video.active {
+    background: var(--danger-color);
+    color: white;
+}
+
+.telemedicine-control.end {
+    background: var(--danger-color);
+    color: white;
+}
+
+.telemedicine-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.telemedicine-chat {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+}
+
+.telemedicine-chat-header {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.telemedicine-chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.telemedicine-message {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.telemedicine-message.sent {
+    align-items: flex-end;
+}
+
+.telemedicine-message.received {
+    align-items: flex-start;
+}
+
+.telemedicine-message-content {
+    max-width: 80%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    word-wrap: break-word;
+}
+
+.telemedicine-message.sent .telemedicine-message-content {
+    background: var(--primary-color);
+    color: white;
+}
+
+.telemedicine-message.received .telemedicine-message-content {
+    background: var(--gray-100);
+    color: var(--gray-900);
+}
+
+.telemedicine-message-time {
+    font-size: var(--font-size-xs);
+    color: var(--gray-500);
+}
+
+.telemedicine-chat-input {
+    padding: var(--spacing-md);
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.telemedicine-chat-input input {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+}
+
+.telemedicine-chat-input button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+}
+
+/* Financial Styles */
+.financial-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    height: calc(100vh - var(--header-height) - var(--spacing-xl) * 2);
+}
+
+.financial-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.financial-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.financial-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.financial-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.financial-content {
+    padding: var(--spacing-lg);
+}
+
+.financial-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.financial-summary-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: var(--gray-50);
+    border-radius: var(--border-radius);
+}
+
+.financial-summary-value {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+}
+
+.financial-summary-value.positive {
+    color: var(--success-color);
+}
+
+.financial-summary-value.negative {
+    color: var(--danger-color);
+}
+
+.financial-summary-label {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+}
+
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.financial-table th,
+.financial-table td {
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.financial-table th {
+    background: var(--gray-50);
+    font-weight: 600;
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+}
+
+.financial-table tbody tr:hover {
+    background: var(--gray-50);
+}
+
+.financial-amount {
+    font-weight: 500;
+    text-align: right;
+}
+
+.financial-amount.positive {
+    color: var(--success-color);
+}
+
+.financial-amount.negative {
+    color: var(--danger-color);
+}
+
+/* Insurance Styles */
+.insurance-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    height: calc(100vh - var(--header-height) - var(--spacing-xl) * 2);
+}
+
+.insurance-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+}
+
+.insurance-title h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.insurance-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.insurance-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.insurance-section {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.insurance-section-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.insurance-section-content {
+    padding: var(--spacing-lg);
+}
+
+.guide-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.guide-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.guide-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.guide-form-label {
+    font-weight: 500;
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+}
+
+.guide-form-input {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+}
+
+.guide-form-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
+}
+
+.batch-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.batch-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    transition: var(--transition-fast);
+}
+
+.batch-item:hover {
+    background: var(--gray-50);
+    border-color: var(--primary-color);
+}
+
+.batch-info {
+    flex: 1;
+}
+
+.batch-name {
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-xs);
+}
+
+.batch-meta {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.batch-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.batch-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* Stock Styles */
+.stock-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    height: calc(100vh - var(--header-height) - var(--spacing-xl) * 2);
+}
+
+.stock-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-lg);
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+}
+
+.stock-title h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.stock-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.stock-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.stock-section {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.stock-section-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    font-weight: 600;
+    color: var(--gray-700);
+}
+
+.stock-section-content {
+    padding: var(--spacing-lg);
+}
+
+.stock-alerts {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.stock-alert {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+}
+
+.stock-alert.low {
+    background: rgba(245, 124, 0, 0.1);
+    border: 1px solid rgba(245, 124, 0, 0.2);
+    color: var(--warning-color);
+}
+
+.stock-alert.expired {
+    background: rgba(211, 47, 47, 0.1);
+    border: 1px solid rgba(211, 47, 47, 0.2);
+    color: var(--danger-color);
+}
+
+.stock-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-fast);
+}
+
+.stock-item:hover {
+    background: var(--gray-50);
+    border-color: var(--primary-color);
+}
+
+.stock-item-info {
+    flex: 1;
+}
+
+.stock-item-name {
+    font-weight: 500;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-xs);
+}
+
+.stock-item-details {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.stock-item-quantity {
+    font-weight: 500;
+    color: var(--gray-900);
+}
+
+.stock-item-quantity.low {
+    color: var(--warning-color);
+}
+
+.stock-item-quantity.critical {
+    color: var(--danger-color);
+}
+
+/* Patient Portal Styles */
+.patient-portal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+.patient-portal-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.patient-portal-logo {
+    font-size: var(--font-size-3xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.patient-portal-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.patient-portal-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--gray-600);
+}
+
+.patient-portal-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.patient-portal-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition-fast);
+}
+
+.patient-portal-card:hover {
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-2px);
+}
+
+.patient-portal-card-header {
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-50);
+    text-align: center;
+}
+
+.patient-portal-card-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.patient-portal-card-title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: var(--spacing-sm);
+}
+
+.patient-portal-card-description {
+    font-size: var(--font-size-sm);
+    color: var(--gray-600);
+}
+
+.patient-portal-card-body {
+    padding: var(--spacing-lg);
+}
+
+.patient-portal-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.patient-portal-feature:last-child {
+    border-bottom: none;
+}
+
+.patient-portal-feature-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xs);
+    flex-shrink: 0;
+}
+
+.patient-portal-feature-text {
+    font-size: var(--font-size-sm);
+    color: var(--gray-700);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .ai-features-container,
+    .telemedicine-container,
+    .financial-container,
+    .insurance-content,
+    .stock-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .patient-portal-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .ai-feature-stats,
+    .financial-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .guide-form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .telemedicine-controls {
+        flex-wrap: wrap;
+    }
+    
+    .telemedicine-control {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-sm);
+    }
+}
